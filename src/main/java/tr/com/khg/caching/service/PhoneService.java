@@ -4,6 +4,7 @@ import tr.com.khg.caching.domain.Phone;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Service Interface for managing {@link Phone}.
@@ -40,4 +41,12 @@ public interface PhoneService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Save all phone
+     *
+     * @param phones the entity to save.
+     * @return persisted phones
+     */
+    List<Phone> saveAll(List<Phone> phones);
 }

@@ -1,13 +1,48 @@
-<jhi-page-ribbon></jhi-page-ribbon>
-
-<div>
-    <router-outlet name="navbar"></router-outlet>
-</div>
-
-<div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
+<mat-drawer-container autosize style="height: 100vh">
+    <mat-drawer opened #drawer mode="side">
+        <div class="col" style="width: 200px">
+            <div class="row navbar navbar-dark navbar-expand-md bg-primary">
+                <span jhiTranslate="global.title" class="navbar-title" style="color: white">ModernProject</span>
+            </div>
+            <div class="row">
+                <img src="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/advice/maps-satellite-images/satellite-image-of-globe.jpg" alt="Foto" style="width: 250px; height: 100%">
+            </div>
+            <div class="row d-flex justify-content-center pt-3" style="background-color: #737373">
+                <span style="color: #444444">Kullanıcı Adı</span>
+            </div>
+            <div class="row" >
+                <mat-expansion-panel style="width: 100%" hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>İlk işlemler</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <button mat-button style="width: 100%;">Basic</button>
+                    <button mat-button style="width: 100%;">Basic 2</button>
+                    <button mat-button style="width: 100%;">Basic 3</button>
+                </mat-expansion-panel>
+            </div>
+            <div class="row" >
+                <mat-expansion-panel style="width: 100%" hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>İkinci işlemler</mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <p>1. Seeçenek</p>
+                    <p>2. Seeçenek</p>
+                    <p>3. Seeçenek</p>
+                </mat-expansion-panel>
+            </div>
+        </div>
+    </mat-drawer>
+    <jhi-page-ribbon></jhi-page-ribbon>
+    <div>
+        <router-outlet name="navbar"></router-outlet>
     </div>
-
-    <jhi-footer></jhi-footer>
-</div>
+    <div class="container-fluid">
+        <div class="card jh-card">
+            <router-outlet></router-outlet>
+        </div>
+        <jhi-footer></jhi-footer>
+        <button type="button" mat-button (click)="drawer.toggle()">
+            Toggle sidenav
+        </button>
+    </div>
+</mat-drawer-container>

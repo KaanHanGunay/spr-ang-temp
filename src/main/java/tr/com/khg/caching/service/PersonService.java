@@ -40,4 +40,12 @@ public interface PersonService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Save a person with relations
+     *
+     * @param person the entity to save.
+     * @return the persisted entity.
+     */
+    Person saveWithRelations(Person person);
 }

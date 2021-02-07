@@ -1,0 +1,80 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title>Ekleme</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="form!">
+            <div class="row">
+                <div class="col-6 pr-2">
+                    <mat-card-subtitle>Bilgiler</mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                    <div class="row pl-2">
+                        <mat-form-field class="full-width">
+                            <mat-label>İsim</mat-label>
+                            <input matInput formControlName="name" placeholder="İsim Girin" />
+                        </mat-form-field>
+                    </div>
+                    <div class="row pl-2">
+                        <mat-form-field class="full-width">
+                            <mat-label>Soyisim</mat-label>
+                            <input matInput formControlName="surname" placeholder="Soyisim Girin" />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="col-6 pl-2">
+                    <mat-card-subtitle>Bilgiler</mat-card-subtitle>
+                    <mat-divider></mat-divider>
+                    <div class="row" *ngFor="let phone of phones">
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Telefon</mat-label>
+                                <input matInput [formControlName]="'phone' + phones.length" [(ngModel)]="phone.phoneNumber" placeholder="Telefon" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Yıl1</mat-label>
+                                <input matInput [formControlName]="'phoneStart' + phones.length" [(ngModel)]="phone.startYear" type="number" placeholder="Yıl 1" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Yıl2</mat-label>
+                                <input matInput [formControlName]="'phoneEnd' + phones.length" [(ngModel)]="phone.endYear" type="number" placeholder="Yıl 2" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3 full-width">
+                            <button mat-button (click)="addNewPhone()">Ekle</button>
+                        </div>
+                    </div>
+                    <div class="row" *ngFor="let city of pastCities">
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Şehir</mat-label>
+                                <input matInput [formControlName]="'city' + pastCities.length" [(ngModel)]="city.city" placeholder="Şehir" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Yıl1</mat-label>
+                                <input matInput [formControlName]="'cityStart' + pastCities.length" [(ngModel)]="city.startYear" placeholder="Yıl 1" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3">
+                            <mat-form-field class="full-width">
+                                <mat-label>Yıl2</mat-label>
+                                <input matInput [formControlName]="'cityEnd' + pastCities.length" [(ngModel)]="city.endYear" placeholder="Yıl 2" />
+                            </mat-form-field>
+                        </div>
+                        <div class="col-3">
+                            <button mat-button (click)="addNewCity()">Ekle</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </mat-card-content>
+    <mat-card-actions>
+        <button mat-button (click)="createNew()">Oluştur</button>
+    </mat-card-actions>
+</mat-card>

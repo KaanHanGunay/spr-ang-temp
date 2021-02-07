@@ -11,6 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 
 /**
  * Service Implementation for managing {@link Phone}.
@@ -52,5 +53,10 @@ public class PhoneServiceImpl implements PhoneService {
     public void delete(Long id) {
         log.debug("Request to delete Phone : {}", id);
         phoneRepository.deleteById(id);
+    }
+
+    @Override
+    public List<Phone> saveAll(List<Phone> phones) {
+        return phoneRepository.saveAll(phones);
     }
 }

@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
 
-import { HomeComponent } from './home.component';
+import { CreateComponent } from 'app/components/person/create/create.component';
 
 export const HOME_ROUTE: Route = {
   path: '',
-  component: HomeComponent,
+  component: CreateComponent,
   data: {
     authorities: [],
     pageTitle: 'home.title',

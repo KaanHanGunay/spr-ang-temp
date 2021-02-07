@@ -40,4 +40,12 @@ public interface PastCitiesService {
      * @param id the id of the entity.
      */
     void delete(Long id);
+
+    /**
+     * Save all pastCities
+     *
+     * @param cities the entities to save
+     * @return the persisted entites
+     */
+    List<PastCities> saveAll(List<PastCities> cities);
 }

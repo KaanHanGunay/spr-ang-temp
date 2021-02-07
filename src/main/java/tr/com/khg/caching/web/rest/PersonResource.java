@@ -50,7 +50,7 @@ public class PersonResource {
         if (person.getId() != null) {
             throw new BadRequestAlertException("A new person cannot already have an ID", ENTITY_NAME, "idexists");
         }
-        Person result = personService.save(person);
+        Person result = personService.saveWithRelations(person);
         return ResponseEntity.created(new URI("/api/people/" + result.getId()))
             .headers(HeaderUtil.createEntityCreationAlert(applicationName, true, ENTITY_NAME, result.getId().toString()))
             .body(result);

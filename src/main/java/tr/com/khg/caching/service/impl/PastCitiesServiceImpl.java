@@ -53,4 +53,9 @@ public class PastCitiesServiceImpl implements PastCitiesService {
         log.debug("Request to delete PastCities : {}", id);
         pastCitiesRepository.deleteById(id);
     }
+
+    @Override
+    public List<PastCities> saveAll(List<PastCities> cities) {
+        return pastCitiesRepository.saveAll(cities);
+    }
 }

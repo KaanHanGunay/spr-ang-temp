@@ -1,5 +1,6 @@
 package tr.com.khg.caching.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -31,8 +32,8 @@ public class PastCities implements Serializable {
     @Column(name = "end_year")
     private Integer endYear;
 
-    @ManyToOne
-    @JsonIgnoreProperties(value = "cities", allowSetters = true)
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JsonIgnore
     private Person person;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
