@@ -1,0 +1,24 @@
+{
+  "modernProjectApp": {
+    "identity": {
+      "home": {
+        "title": "Identities",
+        "createLabel": "Create a new Identity",
+        "createOrEditLabel": "Create or edit a Identity",
+        "notFound": "No Identities found"
+      },
+      "created": "A new Identity is created with identifier {{ param }}",
+      "updated": "A Identity is updated with identifier {{ param }}",
+      "deleted": "A Identity is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Identity {{ id }}?"
+      },
+      "detail": {
+        "title": "Identity"
+      },
+      "identityNumber": "Identity Number",
+      "motherName": "Mother Name",
+      "fatherName": "Father Name"
+    }
+  }
+}

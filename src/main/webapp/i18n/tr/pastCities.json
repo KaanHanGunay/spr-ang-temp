@@ -1,0 +1,25 @@
+{
+  "modernProjectApp": {
+    "pastCities": {
+      "home": {
+        "title": "Past Cities",
+        "createLabel": "Create a new Past Cities",
+        "createOrEditLabel": "Create or edit a Past Cities",
+        "notFound": "No Past Cities found"
+      },
+      "created": "A new Past Cities is created with identifier {{ param }}",
+      "updated": "A Past Cities is updated with identifier {{ param }}",
+      "deleted": "A Past Cities is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Past Cities {{ id }}?"
+      },
+      "detail": {
+        "title": "Past Cities"
+      },
+      "city": "City",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "person": "Person"
+    }
+  }
+}

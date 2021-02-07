@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="person">
+            <h2><span jhiTranslate="modernProjectApp.person.detail.title">Person</span> {{ person.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="modernProjectApp.person.name">Name</span></dt>
+                <dd>
+                    <span>{{ person.name }}</span>
+                </dd>
+                <dt><span jhiTranslate="modernProjectApp.person.surname">Surname</span></dt>
+                <dd>
+                    <span>{{ person.surname }}</span>
+                </dd>
+                <dt><span jhiTranslate="modernProjectApp.person.birthday">Birthday</span></dt>
+                <dd>
+                    <span>{{ person.birthday }}</span>
+                </dd>
+                <dt><span jhiTranslate="modernProjectApp.person.identity">Identity</span></dt>
+                <dd>
+                    <div *ngIf="person.identity">
+                        <a [routerLink]="['/identity', person.identity?.id, 'view']">{{ person.identity?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/person', person.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

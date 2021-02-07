@@ -1,0 +1,34 @@
+entity Person {
+	name String,
+    surname String,
+    birthday LocalDate
+}
+
+entity Identity {
+	identityNumber String,
+    motherName String,
+    fatherName String
+}
+
+entity Phone {
+	phoneNumber String,
+    startYear Integer,
+    endYear Integer
+}
+
+entity PastCities {
+	city String,
+    startYear Integer,
+    endYear Integer
+}
+
+relationship OneToOne {
+	Person{identity} to Identity
+}
+
+relationship OneToMany {
+	Person{phones} to Phone{person},
+    Person{cities} to PastCities{person}
+}
+
+service * with serviceImpl

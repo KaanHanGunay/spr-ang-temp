@@ -1,0 +1,38 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="identity">
+            <h2><span jhiTranslate="modernProjectApp.identity.detail.title">Identity</span> {{ identity.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="modernProjectApp.identity.identityNumber">Identity Number</span></dt>
+                <dd>
+                    <span>{{ identity.identityNumber }}</span>
+                </dd>
+                <dt><span jhiTranslate="modernProjectApp.identity.motherName">Mother Name</span></dt>
+                <dd>
+                    <span>{{ identity.motherName }}</span>
+                </dd>
+                <dt><span jhiTranslate="modernProjectApp.identity.fatherName">Father Name</span></dt>
+                <dd>
+                    <span>{{ identity.fatherName }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/identity', identity.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

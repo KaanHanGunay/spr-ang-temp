@@ -1,0 +1,71 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="modernProjectApp.pastCities.home.title">Past Cities</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-past-cities" [routerLink]="['/past-cities/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="modernProjectApp.pastCities.home.createLabel">
+            Create a new Past Cities
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="pastCities?.length === 0">
+        <span jhiTranslate="modernProjectApp.pastCities.home.notFound">No pastCities found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="pastCities && pastCities.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="modernProjectApp.pastCities.city">City</span></th>
+                    <th scope="col" ><span jhiTranslate="modernProjectApp.pastCities.startYear">Start Year</span></th>
+                    <th scope="col" ><span jhiTranslate="modernProjectApp.pastCities.endYear">End Year</span></th>
+                    <th scope="col" ><span jhiTranslate="modernProjectApp.pastCities.person">Person</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let pastCities of pastCities ;trackBy: trackId">
+                    <td><a [routerLink]="['/past-cities', pastCities.id, 'view']">{{ pastCities.id }}</a></td>
+                    <td>{{ pastCities.city }}</td>
+                    <td>{{ pastCities.startYear }}</td>
+                    <td>{{ pastCities.endYear }}</td>
+                    <td>
+                        <div *ngIf="pastCities.person">
+                            <a [routerLink]="['/person', pastCities.person?.id, 'view']" >{{ pastCities.person?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/past-cities', pastCities.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/past-cities', pastCities.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(pastCities)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

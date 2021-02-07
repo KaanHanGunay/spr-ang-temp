@@ -1,0 +1,50 @@
+{
+  "name": "Person",
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "surname",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "birthday",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "otherEntityName": "identity",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "identity",
+      "otherEntityField": "id",
+      "ownerSide": true
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "phone",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "phones"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "otherEntityName": "pastCities",
+      "otherEntityRelationshipName": "person",
+      "relationshipName": "cities"
+    }
+  ],
+  "changelogDate": "20210207092450",
+  "entityTableName": "person",
+  "dto": "no",
+  "pagination": "no",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}
