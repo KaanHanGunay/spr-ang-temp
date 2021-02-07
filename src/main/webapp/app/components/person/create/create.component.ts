@@ -5,6 +5,7 @@ import { IPhone, Phone } from 'app/shared/model/phone.model';
 import { IPastCities, PastCities } from 'app/shared/model/past-cities.model';
 import { PersonService } from 'app/entities/person/person.service';
 import { Identity } from 'app/shared/model/identity.model';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'jhi-create',
@@ -17,7 +18,7 @@ export class CreateComponent implements OnInit {
   phones: IPhone[] = [new Phone()];
   pastCities: IPastCities[] = [new PastCities()];
 
-  constructor(public personService: PersonService) {}
+  constructor(public personService: PersonService, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -59,7 +60,9 @@ export class CreateComponent implements OnInit {
     });
     this.newPerson.cities = cities;
 
-    this.personService.create(this.newPerson).subscribe();
+    this.personService.create(this.newPerson).subscribe(_ => {
+      this._snackBar.open('Yeni Şahıs Kaydı Eklendi!', 'Kapat', { duration: 2000 });
+    });
   }
 
   addNewPhone(): void {
