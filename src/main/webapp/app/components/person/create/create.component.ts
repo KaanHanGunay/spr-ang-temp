@@ -78,4 +78,8 @@ export class CreateComponent implements OnInit {
     this.form?.addControl('cityStart' + this.pastCities.length, new FormControl(null));
     this.form?.addControl('cityEnd' + this.pastCities.length, new FormControl(null));
   }
+
+  delete(): void {
+    this.personService.delete(1).subscribe();
+  }
 }
