@@ -13,7 +13,7 @@ import java.io.Serializable;
 @Entity
 @Table(name = "identity")
 @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
-public class Identity implements Serializable {
+public class Identity extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

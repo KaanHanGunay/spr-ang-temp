@@ -39,5 +39,10 @@
     "nativeLanguage": "tr",
     "languages": ["tr"],
     "blueprints": []
+  },
+  "generator-jhipster-entity-audit": {
+    "auditFramework": "custom",
+    "auditPage": true,
+    "lastLiquibaseTimestamp": 1612717991000
   }
 }

@@ -54,6 +54,7 @@ public class CacheConfiguration {
             createCache(cm, tr.com.khg.caching.domain.Person.class.getName() + ".phones");
             createCache(cm, tr.com.khg.caching.domain.Person.class.getName() + ".cities");
             createCache(cm, tr.com.khg.caching.domain.PastCities.class.getName());
+            createCache(cm, tr.com.khg.caching.domain.EntityAuditEvent.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }
