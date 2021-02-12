@@ -61,7 +61,7 @@ export class CreateComponent implements OnInit {
     this.newPerson.cities = cities;
 
     this.personService.create(this.newPerson).subscribe(_ => {
-      this._snackBar.open('Yeni Şahıs Kaydı Eklendi!', 'Kapat', { duration: 2000 });
+      this._snackBar.open(`${_.body?.id} eklendi`, 'Kapat', { duration: 2000 });
     });
   }
 

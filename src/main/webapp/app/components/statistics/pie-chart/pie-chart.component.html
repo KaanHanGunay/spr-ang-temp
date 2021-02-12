@@ -1,0 +1,21 @@
+<div class="col">
+    <div class="row">
+        <div class="col-6">
+            <mat-card>
+                <mat-card-title>İstatislik</mat-card-title>
+                <mat-card-content>
+                    <div class="chart-custom">
+                        <canvas baseChart
+                                [data]="chartData"
+                                [labels]="chartLabel"
+                                [chartType]="chartType"
+                                [options]="chartOptions"
+                                width="500" height="300">
+                        </canvas>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+    </div>
+</div>
+

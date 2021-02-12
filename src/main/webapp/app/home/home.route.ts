@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
 
-import { CreateComponent } from 'app/components/person/create/create.component';
+import { PieChartComponent } from 'app/components/statistics/pie-chart/pie-chart.component';
 
 export const HOME_ROUTE: Route = {
   path: '',
-  component: CreateComponent,
+  component: PieChartComponent,
   data: {
     authorities: [],
     pageTitle: 'home.title',

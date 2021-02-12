@@ -18,6 +18,7 @@ import { PageRibbonComponent } from './layouts/profiles/page-ribbon.component';
 import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { CreateComponent } from './components/person/create/create.component';
+import { PieChartComponent } from './components/statistics/pie-chart/pie-chart.component';
 
 @NgModule({
   imports: [
@@ -39,6 +40,7 @@ import { CreateComponent } from './components/person/create/create.component';
     ActiveMenuDirective,
     FooterComponent,
     CreateComponent,
+    PieChartComponent,
   ],
   bootstrap: [MainComponent],
 })
