@@ -19,6 +19,9 @@ import { ActiveMenuDirective } from './layouts/navbar/active-menu.directive';
 import { ErrorComponent } from './layouts/error/error.component';
 import { CreateComponent } from './components/person/create/create.component';
 import { PieChartComponent } from './components/statistics/pie-chart/pie-chart.component';
+import { MainStatsComponent } from './components/statistics/main-stats/main-stats.component';
+import { DoughnutChartComponent } from './components/statistics/doughnut-chart/doughnut-chart.component';
+import { BarChartComponent } from './components/statistics/bar-chart/bar-chart.component';
 
 @NgModule({
   imports: [
@@ -41,6 +44,9 @@ import { PieChartComponent } from './components/statistics/pie-chart/pie-chart.c
     FooterComponent,
     CreateComponent,
     PieChartComponent,
+    MainStatsComponent,
+    DoughnutChartComponent,
+    BarChartComponent,
   ],
   bootstrap: [MainComponent],
 })

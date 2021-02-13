@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-content>
+        <div class="chart-custom">
+            <canvas baseChart
+                [chartType]="'bar'"
+                [labels]="chartLabel"
+                [data]="chartData"
+                [options]="chartOptions"
+                height="100">
+            </canvas>
+        </div>
+    </mat-card-content>
+</mat-card>

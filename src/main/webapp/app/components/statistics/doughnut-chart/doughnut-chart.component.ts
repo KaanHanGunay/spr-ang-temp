@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartOptions, ChartType } from 'chart.js';
-import 'chartjs-plugin-datalabels';
 import { Context } from 'chartjs-plugin-datalabels';
 
 @Component({
-  selector: 'jhi-pie-chart',
-  templateUrl: './pie-chart.component.html',
-  styleUrls: ['./pie-chart.component.scss'],
+  selector: 'jhi-doughnut-chart',
+  templateUrl: './doughnut-chart.component.html',
+  styleUrls: ['./doughnut-chart.component.scss'],
 })
-export class PieChartComponent implements OnInit {
-  chartType: ChartType = 'pie';
+export class DoughnutChartComponent implements OnInit {
+  chartType: ChartType = 'doughnut';
   chartLabel: string[] = [];
   chartData: number[] = [];
 
