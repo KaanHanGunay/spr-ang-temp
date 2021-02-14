@@ -22,6 +22,7 @@ import { PieChartComponent } from './components/statistics/pie-chart/pie-chart.c
 import { MainStatsComponent } from './components/statistics/main-stats/main-stats.component';
 import { DoughnutChartComponent } from './components/statistics/doughnut-chart/doughnut-chart.component';
 import { BarChartComponent } from './components/statistics/bar-chart/bar-chart.component';
+import { ChartWtihNewComponent } from './components/statistics/chart-wtih-new/chart-wtih-new.component';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { BarChartComponent } from './components/statistics/bar-chart/bar-chart.c
     MainStatsComponent,
     DoughnutChartComponent,
     BarChartComponent,
+    ChartWtihNewComponent,
   ],
   bootstrap: [MainComponent],
 })
