@@ -1,10 +1,22 @@
 <mat-card>
+    <mat-card-title>
+        <div class="d-flex flex-row-reverse">
+            <button mat-mini-fab color="primary" [matMenuTriggerFor]="menu">
+                <fa-icon icon="ellipsis-v"></fa-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+                <button mat-menu-item>
+                    <a download="image.png" style="color: black" [href]="url">
+                        <fa-icon icon="download"></fa-icon>
+                        <span>PNG İndir</span>
+                    </a>
+                </button>
+            </mat-menu>
+        </div>
+    </mat-card-title>
     <mat-card-content>
         <div>
-            <canvas id="canvas" >{{ chart }}</canvas>
+            <canvas id="canvas">{{ chart }}</canvas>
         </div>
     </mat-card-content>
-    <mat-card-actions>
-        <a download="image.png" [href]="url">İndir</a>
-    </mat-card-actions>
 </mat-card>
